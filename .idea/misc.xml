@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/StateJoinJob/pom.xml" />
         <option value="$PROJECT_DIR$/metrics-parser-job/pom.xml" />
+        <option value="$PROJECT_DIR$/state-join-job/pom.xml" />
       </list>
     </option>
   </component>

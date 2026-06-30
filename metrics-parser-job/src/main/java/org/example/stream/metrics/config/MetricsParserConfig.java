@@ -45,65 +45,65 @@ public class MetricsParserConfig extends JobConfig {
 
     public void initFromConfiguration(Configuration config) {
         super.initFromConfiguration(config);
-        if (config.containsKey("rt.metrics.output.name.delimiter")) {
-            this.setMetricsNameDelimiter(config.getString("rt.metrics.output.name.delimiter", "."));
+        if (config.containsKey("stream.metrics.output.name.delimiter")) {
+            this.setMetricsNameDelimiter(config.getString("stream.metrics.output.name.delimiter", "."));
         }
 
-        if (config.containsKey("rt.metrics.tags")) {
-            this.setOpentsdbTags(config.getString("rt.metrics.tags", "[job_name]"));
+        if (config.containsKey("stream.metrics.tags")) {
+            this.setOpentsdbTags(config.getString("stream.metrics.tags", "[job_name]"));
         }
 
-        if (config.containsKey("rt.metrics.rocksdb.extra.tags")) {
-            this.setRocksdbExtraTags(config.getString("rt.metrics.rocksdb.extra.tags", "[column_family]"));
+        if (config.containsKey("stream.metrics.rocksdb.extra.tags")) {
+            this.setRocksdbExtraTags(config.getString("stream.metrics.rocksdb.extra.tags", "[column_family]"));
         }
 
-        if (config.containsKey("rt.metrics.scope.tags.map")) {
-            this.setScopeTagsMap(config.getString("rt.metrics.scope.tags.map", "{JM=[scope];JM_JOB=[scope];TM=[scope];TM_JOB=[scope];TASK=[scope,task_name,subtask_index];OPERATOR=[scope,operator_id,operator_name,subtask_index]}"));
+        if (config.containsKey("stream.metrics.scope.tags.map")) {
+            this.setScopeTagsMap(config.getString("stream.metrics.scope.tags.map", "{JM=[scope];JM_JOB=[scope];TM=[scope];TM_JOB=[scope];TASK=[scope,task_name,subtask_index];OPERATOR=[scope,operator_id,operator_name,subtask_index]}"));
         }
 
-        if (config.containsKey("rt.metrics.extra.tags.map")) {
-            this.setExtraTagsMap(config.getString("rt.metrics.extra.tags.map", "{__ack-count=[host_name]}"));
+        if (config.containsKey("stream.metrics.extra.tags.map")) {
+            this.setExtraTagsMap(config.getString("stream.metrics.extra.tags.map", "{__ack-count=[host_name]}"));
         }
 
-        if (config.containsKey("rt.metrics.extractor.type")) {
-            this.setExtractorType(config.getString("rt.metrics.extractor.type", "{flink=[uptime,fullRestarts,numRecordsInPerSecond,numRecordsOutPerSecond,Status.JVM.CPU.Load,Status.JVM.CPU.Load,Status.JVM.Memory.Heap.Used,Status.JVM.Memory.NonHeap.Used,Status.JVM.Memory.Heap.Used,Status.JVM.Memory.NonHeap.Used,Status.JVM.GarbageCollector.PS_Scavenge.Count,Status.JVM.GarbageCollector.PS_MarkSweep.Count,Status.Network.AvailableMemorySegments];flink_map_kafka_offset=[KafkaConsumer.current-offsets];storm_single_value=[uptimeSecs];storm_map_sum=[__ack-count,__fail-count,__execute-count];storm_map_avg=[__complete-latency,__execute-latency];storm_map_memory=[memory/nonHeap,memory/heap];storm_map_gc=[GC/ConcurrentMarkSweep,GC/ParNew];storm_map_kafka_offset=[org.example.stream.kafkaOffset,kafkaOffset]}"));
+        if (config.containsKey("stream.metrics.extractor.type")) {
+            this.setExtractorType(config.getString("stream.metrics.extractor.type", "{flink=[uptime,fullRestarts,numRecordsInPerSecond,numRecordsOutPerSecond,Status.JVM.CPU.Load,Status.JVM.CPU.Load,Status.JVM.Memory.Heap.Used,Status.JVM.Memory.NonHeap.Used,Status.JVM.Memory.Heap.Used,Status.JVM.Memory.NonHeap.Used,Status.JVM.GarbageCollector.PS_Scavenge.Count,Status.JVM.GarbageCollector.PS_MarkSweep.Count,Status.Network.AvailableMemorySegments];flink_map_kafka_offset=[KafkaConsumer.current-offsets];storm_single_value=[uptimeSecs];storm_map_sum=[__ack-count,__fail-count,__execute-count];storm_map_avg=[__complete-latency,__execute-latency];storm_map_memory=[memory/nonHeap,memory/heap];storm_map_gc=[GC/ConcurrentMarkSweep,GC/ParNew];storm_map_kafka_offset=[org.example.stream.kafkaOffset,kafkaOffset]}"));
         }
 
-        if (config.containsKey("rt.metrics.extractor.multi")) {
-            this.setMultiMetricsSet(config.getString("rt.metrics.extractor.multi", "[storm_map_kafka_offset,flink_map_kafka_offset,storm_map_gc,storm_map_kafka_offset]"));
+        if (config.containsKey("stream.metrics.extractor.multi")) {
+            this.setMultiMetricsSet(config.getString("stream.metrics.extractor.multi", "[storm_map_kafka_offset,flink_map_kafka_offset,storm_map_gc,storm_map_kafka_offset]"));
         }
 
-        if (config.containsKey("rt.metrics.filter.display")) {
-            this.setDisplayedMetricsSet(config.getString("rt.metrics.filter.display", "[uptime,fullRestarts,numRecordsInPerSecond,numRecordsOutPerSecond,Status.JVM.CPU.Load,Status.JVM.CPU.Load,Status.JVM.Memory.Heap.Used,Status.JVM.Memory.NonHeap.Used,Status.JVM.Memory.Heap.Used,Status.JVM.Memory.NonHeap.Used,Status.JVM.GarbageCollector.PS_Scavenge.Count,Status.JVM.GarbageCollector.PS_MarkSweep.Count,Status.Network.AvailableMemorySegments]"));
+        if (config.containsKey("stream.metrics.filter.display")) {
+            this.setDisplayedMetricsSet(config.getString("stream.metrics.filter.display", "[uptime,fullRestarts,numRecordsInPerSecond,numRecordsOutPerSecond,Status.JVM.CPU.Load,Status.JVM.CPU.Load,Status.JVM.Memory.Heap.Used,Status.JVM.Memory.NonHeap.Used,Status.JVM.Memory.Heap.Used,Status.JVM.Memory.NonHeap.Used,Status.JVM.GarbageCollector.PS_Scavenge.Count,Status.JVM.GarbageCollector.PS_MarkSweep.Count,Status.Network.AvailableMemorySegments]"));
         }
 
-        if (config.containsKey("rt.metrics.filter.user-defined")) {
-            this.setDisplayUserDefinedMetrics(config.getBoolean("rt.metrics.filter.user-defined", true));
+        if (config.containsKey("stream.metrics.filter.user-defined")) {
+            this.setDisplayUserDefinedMetrics(config.getBoolean("stream.metrics.filter.user-defined", true));
         }
 
-        if (config.containsKey("rt.metrics.output.all")) {
-            this.setSinkAllMetrics(config.getBoolean("rt.metrics.output.all", false));
+        if (config.containsKey("stream.metrics.output.all")) {
+            this.setSinkAllMetrics(config.getBoolean("stream.metrics.output.all", false));
         }
 
-        if (config.containsKey("rt.metrics.output.normalized")) {
-            this.setOutputNormalizedMetrics(config.getBoolean("rt.metrics.output.normalized", false));
+        if (config.containsKey("stream.metrics.output.normalized")) {
+            this.setOutputNormalizedMetrics(config.getBoolean("stream.metrics.output.normalized", false));
         }
 
     }
 
     public Configuration toConfiguration() {
         Configuration config = super.toConfiguration();
-        config.setString("rt.metrics.output.name.delimiter", this.getMetricsNameDelimiter());
-        config.setString("rt.metrics.tags", this.getOpentsdbTags().toString());
-        config.setString("rt.metrics.rocksdb.extra.tags", this.getRocksdbExtraTags().toString());
-        config.setString("rt.metrics.scope.tags.map", this.getScopeTagsMapString());
-        config.setString("rt.metrics.extra.tags.map", this.getExtraTagsMapString());
-        config.setString("rt.metrics.extractor.type", this.getExtractorTypeString());
-        config.setString("rt.metrics.extractor.multi", this.getMultiMetricsSet().toString());
-        config.setString("rt.metrics.filter.display", this.getDisplayedMetricsSet().toString());
-        config.setString("rt.metrics.filter.user-defined", this.getDisplayUserDefinedMetrics().toString());
-        config.setString("rt.metrics.output.all", this.getSinkAllMetrics().toString());
-        config.setString("rt.metrics.output.normalized", this.getOutputNormalizedMetrics().toString());
+        config.setString("stream.metrics.output.name.delimiter", this.getMetricsNameDelimiter());
+        config.setString("stream.metrics.tags", this.getOpentsdbTags().toString());
+        config.setString("stream.metrics.rocksdb.extra.tags", this.getRocksdbExtraTags().toString());
+        config.setString("stream.metrics.scope.tags.map", this.getScopeTagsMapString());
+        config.setString("stream.metrics.extra.tags.map", this.getExtraTagsMapString());
+        config.setString("stream.metrics.extractor.type", this.getExtractorTypeString());
+        config.setString("stream.metrics.extractor.multi", this.getMultiMetricsSet().toString());
+        config.setString("stream.metrics.filter.display", this.getDisplayedMetricsSet().toString());
+        config.setString("stream.metrics.filter.user-defined", this.getDisplayUserDefinedMetrics().toString());
+        config.setString("stream.metrics.output.all", this.getSinkAllMetrics().toString());
+        config.setString("stream.metrics.output.normalized", this.getOutputNormalizedMetrics().toString());
         return config;
     }
 

@@ -35,58 +35,58 @@ public class JobConfig implements Serializable {
     }
 
     protected void initFromConfiguration(Configuration config) {
-        if (config.containsKey("rt.metrics.default.name")) {
-            this.setJobName(config.getString("rt.metrics.default.name", "metrics_parser"));
+        if (config.containsKey("stream.metrics.default.name")) {
+            this.setJobName(config.getString("stream.metrics.default.name", "metrics_parser"));
         }
 
-        if (config.containsKey("rt.metrics.num_per_check")) {
-            this.setNumPerCheck(config.getInteger("rt.metrics.num_per_check", 1000));
+        if (config.containsKey("stream.metrics.num_per_check")) {
+            this.setNumPerCheck(config.getInteger("stream.metrics.num_per_check", 1000));
         }
 
-        if (config.containsKey("rt.metrics.check_interval")) {
-            this.setCheckInterval(config.getInteger("rt.metrics.check_interval", 1000));
+        if (config.containsKey("stream.metrics.check_interval")) {
+            this.setCheckInterval(config.getInteger("stream.metrics.check_interval", 1000));
         }
 
-        if (config.containsKey("rt.metrics.len_per_str")) {
-            this.setLenPerStr(config.getInteger("rt.metrics.len_per_str", 50));
+        if (config.containsKey("stream.metrics.len_per_str")) {
+            this.setLenPerStr(config.getInteger("stream.metrics.len_per_str", 50));
         }
 
-        if (config.containsKey("rt.metrics.len_range")) {
-            this.setLenRange(config.getInteger("rt.metrics.len_range", 10));
+        if (config.containsKey("stream.metrics.len_range")) {
+            this.setLenRange(config.getInteger("stream.metrics.len_range", 10));
         }
 
-        if (config.containsKey("rt.metrics.source.print")) {
-            this.setIsSourcePrint(config.getBoolean("rt.metrics.source.print", false));
+        if (config.containsKey("stream.metrics.source.print")) {
+            this.setIsSourcePrint(config.getBoolean("stream.metrics.source.print", false));
         } else {
             this.setIsSourcePrint(false);
         }
 
-        if (config.containsKey("rt.metrics.sink.print")) {
-            this.setIsSinkPrint(config.getBoolean("rt.metrics.sink.print", false));
+        if (config.containsKey("stream.metrics.sink.print")) {
+            this.setIsSinkPrint(config.getBoolean("stream.metrics.sink.print", false));
         } else {
             this.setIsSinkPrint(false);
         }
 
-        if (config.containsKey("rt.metrics.source.parallelism")) {
-            this.setSourceParallelism(config.getInteger("rt.metrics.source.parallelism", -1));
+        if (config.containsKey("stream.metrics.source.parallelism")) {
+            this.setSourceParallelism(config.getInteger("stream.metrics.source.parallelism", -1));
         } else {
             this.setSourceParallelism(-1);
         }
 
-        if (config.containsKey("rt.metrics.formatter.parallelism")) {
-            this.setMetricsFormatterParallelism(config.getInteger("rt.metrics.formatter.parallelism", -1));
+        if (config.containsKey("stream.metrics.formatter.parallelism")) {
+            this.setMetricsFormatterParallelism(config.getInteger("stream.metrics.formatter.parallelism", -1));
         } else {
             this.setMetricsFormatterParallelism(-1);
         }
 
-        if (config.containsKey("rt.metrics.len_random")) {
-            this.setIsLenRandom(config.getBoolean("rt.metrics.len_random", false));
+        if (config.containsKey("stream.metrics.len_random")) {
+            this.setIsLenRandom(config.getBoolean("stream.metrics.len_random", false));
         } else {
             this.setIsLenRandom(false);
         }
 
-        if (config.containsKey("rt.metrics.source.chaining")) {
-            this.setIsSourceChaining(config.getBoolean("rt.metrics.source.chaining", true));
+        if (config.containsKey("stream.metrics.source.chaining")) {
+            this.setIsSourceChaining(config.getBoolean("stream.metrics.source.chaining", true));
         } else {
             this.setIsSourceChaining(true);
         }
@@ -95,17 +95,17 @@ public class JobConfig implements Serializable {
 
     protected Configuration toConfiguration() {
         Configuration config = new Configuration();
-        config.setString("rt.metrics.default.name", this.getJobName());
-        config.setInteger("rt.metrics.num_per_check", this.getNumPerCheck());
-        config.setInteger("rt.metrics.check_interval", this.getCheckInterval());
-        config.setInteger("rt.metrics.len_per_str", this.getLenPerStr());
-        config.setInteger("rt.metrics.len_range", this.getLenRange());
-        config.setBoolean("rt.metrics.source.print", this.getIsSourcePrint());
-        config.setBoolean("rt.metrics.sink.print", this.getIsSinkPrint());
-        config.setInteger("rt.metrics.source.parallelism", this.getSourceParallelism());
-        config.setInteger("rt.metrics.formatter.parallelism", this.getMetricsFormatterParallelism());
-        config.setBoolean("rt.metrics.len_random", this.getIsLenRandom());
-        config.setBoolean("rt.metrics.source.chaining", this.getIsSourceChaining());
+        config.setString("stream.metrics.default.name", this.getJobName());
+        config.setInteger("stream.metrics.num_per_check", this.getNumPerCheck());
+        config.setInteger("stream.metrics.check_interval", this.getCheckInterval());
+        config.setInteger("stream.metrics.len_per_str", this.getLenPerStr());
+        config.setInteger("stream.metrics.len_range", this.getLenRange());
+        config.setBoolean("stream.metrics.source.print", this.getIsSourcePrint());
+        config.setBoolean("stream.metrics.sink.print", this.getIsSinkPrint());
+        config.setInteger("stream.metrics.source.parallelism", this.getSourceParallelism());
+        config.setInteger("stream.metrics.formatter.parallelism", this.getMetricsFormatterParallelism());
+        config.setBoolean("stream.metrics.len_random", this.getIsLenRandom());
+        config.setBoolean("stream.metrics.source.chaining", this.getIsSourceChaining());
         return config;
     }
 

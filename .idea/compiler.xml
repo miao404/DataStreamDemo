@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="StateJoinJob" />
         <module name="metrics-parser-job" />
+        <module name="flink-state-join-example" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
