@@ -6,9 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="HuaweiMT6000c" />
-        <module name="metircs-parser-job" />
+        <module name="StateJoinJob" />
+        <module name="metrics-parser-job" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="HuaweiMT6000c" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -4,12 +4,12 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/HuaweiMT6000c/pom.xml" />
-        <option value="$PROJECT_DIR$/metircs-parser-job/pom.xml" />
+        <option value="$PROJECT_DIR$/StateJoinJob/pom.xml" />
+        <option value="$PROJECT_DIR$/metrics-parser-job/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2">
+  <component name="ProjectRootManager" version="2" project-jdk-name="corretto-1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
